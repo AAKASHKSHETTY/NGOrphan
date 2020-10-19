@@ -1,0 +1,187 @@
+{% load static %}
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    {% block head %}
+  {% endblock head%}
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"><script src="https://kit.fontawesome.com/bad733c527.js" crossorigin="anonymous"></script>  </head>
+
+  <body>
+      	<nav class="navbar navbar-default navbar-inverse navbar-fixed-top">
+
+
+        <div class="container-fluid">
+
+
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+
+              <!--  Code for the hamburger icon-->
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+              <a class="navbar-brand" href="{% url 'home' %}">NGO<font color="#F05E23">rphan</font></a>
+          </div>
+
+          <!-- Anything inside of collapse navbar-collapse goes into the "hamburger" -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              <li><a href="{% url 'camp' %}">Campaigns <span class="sr-only">(current)</span></a></li>
+              <li><a href="{% url 'volun' %}">Volunteer</a></li>
+              <li><a href="{% url 'donate' %}">Donate</a></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Adopt <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="{% url 'action' %}">Action</a></li>
+                  <li><a href="http://cara.nic.in/Parents/eg_ri.html" target="_blank">Laws and Regulations</a></li>
+                  <li><a href="{% url 'laws' %}">Our Policy</a></li>
+
+                  <!-- Use this to separate a new link -->
+
+                  <li role="separator" class="divider"></li>
+                  <li><a href="{% url 'adform' %}">Adoption Form</a></li>
+                </ul>
+              </li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+            {% if user.is_authenticated %}
+              <li><a href="{% url 'profile' %}">{{ user.first_name }}</a></li>
+                <li><a href="{% url 'logout' %}">Logout</a></li>
+              {% else %}
+            <!-- Stuff on the Right -->
+
+
+                <li><a href="{% url 'register' %}">Signup</a></li>
+                <li><a href="{% url 'login' %}">Login</a></li>
+
+            </ul>
+              {% endif %}
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+      </nav>
+      {%block body%}
+      {% endblock body %}
+      <!-- footer area -->
+            <footer class="footer footer_bg_1">
+                <div class="footer_top">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xl-3 col-md-6 col-lg-3">
+                                <div class="footer_widget ">
+                                    <h3 class="footer_title">
+                                        About Us
+                                    </h3>
+                                    <p>Heaven fruitful doesn't over lesser days appear creeping seasons so behold bearing days open</p>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-md-6 col-lg-3">
+                                <div class="footer_widget ">
+                                    <h3 class="footer_title">
+                                        Contact Info
+                                    </h3>
+                                    <p>Address :Your address goes
+                                        here, your demo address.</p>
+                                    <ul>
+                                        <li><a href="#">Phone : +8880 44338899</a></li>
+                                        <li><a href="#">Email : xyz@NGOrphan.com</a></li>
+                                    </ul>
+
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-md-6 col-lg-3">
+                                <div class="footer_widget ">
+                                    <h3 class="footer_title">
+                                        Important Link
+                                    </h3>
+                                    <ul>
+                                        <li><a href="#">View Project</a></li>
+                                        <li><a href="#">Contact Us</a></li>
+                                        <li><a href="#">Testimonial</a></li>
+                                        <li><a href="#">Proparties</a></li>
+                                        <li><a href="#">Support</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-md-6 col-lg-3">
+                                <div class="footer_widget">
+                                    <h3 class="footer_title">
+                                        Newsletter
+                                    </h3>
+                                    <p class="newsletter_text">
+                                        Heaven fruitful doesn't over lesser in days. Appear creeping seasons
+                                    </p>
+                                    <form action="#" class="newsletter_form">
+                                        <input type="text" placeholder="Enter your mail">
+                                        <button type="submit"> <i class="fa fa-paper-plane"></i> </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="copy-right_text">
+                    <div class="container">
+                        <div class="footer_border"></div>
+                        <div class="row">
+                            <div class="col-lg-8">
+                                <p class="copy_right">
+                                    <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This website is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="prac.html" target="_blank">NGOrphan</a>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                                </p>
+                            </div>
+
+                            <div class="col-lg-4">
+                                <div class="socail_links">
+                                    <ul class="socail_links">
+                                        <li>
+                                            <a href="#">
+                                                <i class="fab fa-facebook"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="fab fa-twitter"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="fab fa-instagram"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="fab fa-google-plus-g"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+      <!-- footer end -->
+
+
+
+
+
+  <script
+  src="http://code.jquery.com/jquery-3.1.1.js"
+  integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+  crossorigin="anonymous"></script>  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+
+
+  </body>
+</html>

@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block head %}
+    {% load static %}
+        <link rel="stylesheet" href="{% static 'camp.css' %}" type="text/css">
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+{% endblock head %}
+
+{% block body %}
+
+<div class="cont">
+      <img class="da" src="{% static 'img/camwall.jpg' %}" class="img-fluid" alt="Responsive image" height="900px" width="1500px">
+      <div class="center">Events and</div>
+      <div class="small"><h2><font color="#F05E23">Campaigns</font><h2></div>
+</div>
+
+<div id="container">
+        {% for pos in data %}
+<div class="item ">
+        <form action = "{% url 'camp' %}" method = "POST">
+            {% csrf_token %}
+  <img class="ga" src="{{ MEDIA_URL }}{{ pos.img }}">
+    <div class="overlay">    <h2>{{pos.title}}</h2>
+      <p> Location: {{pos.venue}}<br>TIME: {{pos.time}}<br>DAY: {{pos.date}},{{pos.month}}</p> <p>{{pos.description}}</p>
+        <input type="hidden" name="user_name" value="{{ user.first_name }}"/>
+        <input type="hidden" name="title" value="{{pos.title}}"/>
+        <input type="hidden" name="venue" value="{{pos.venue}}"/>
+        <input type="hidden" name="time" value="{{pos.time}}"/>
+        <input type="hidden" name="date" value="{{pos.date}}"/>
+        <input type="hidden" name="month" value="{{pos.month}}"/>
+        <input type="submit" class="btn btn-primary" value=" ADD Event "/>
+    </div>
+        </form>
+</div>
+  {% endfor %}
+</div>
+<script>'undefined'=== typeof _trfq || (window._trfq = []);'undefined'=== typeof _trfd && (window._trfd=[]),_trfd.push({'tccl.baseHost':'secureserver.net'}),_trfd.push({'ap':'cpsh'},{'server':'p3plcpnl0769'}) // Monitoring performance to make your website faster. If you want to opt-out, please contact web hosting support.</script>
+<script src='https://img1.wsimg.com/tcc/tcc_l.combined.1.0.6.min.js'></script>
+<script>'undefined'=== typeof _trfq || (window._trfq = []);'undefined'=== typeof _trfd && (window._trfd=[]),_trfd.push({'tccl.baseHost':'secureserver.net'}),_trfd.push({'ap':'cpsh'},{'server':'p3plcpnl0769'}) // Monitoring performance to make your website faster. If you want to opt-out, please contact web hosting support.</script>
+<script src='https://img1.wsimg.com/tcc/tcc_l.combined.1.0.6.min.js'></script>
+
+{% endblock body %}
+
