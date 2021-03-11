@@ -4,7 +4,7 @@ Django, Python, HTML, CSS, Javascript
 
 ## About
 This project is made in general for any non-profit organisation that harbours and overlooks the care of orphans. It can be hosted online and be available for anyone, worldwide. The intended audience is any family or adult, who is eligible and willing to adopt, and provide TLC for a child.
-Online marketing is cheap and quick, and it will be available to a farther number of people than by conventional paper-based marketing.
+Online presence is easy and quick to establish, and it will be available to a farther number of people than by conventional paper-based recognition methods.
 The website will be easy-to-use and create a convenient platform to donate, adopt, or offer to volunteer.
 It can be used to keep in touch with the non-profit and the various campaigns or events organised by them as well.
 
